@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, #111 0%, #070a1a 100%);
+    color: #d6ffe9;
+    font-family: 'Montserrat', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 0 0 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #8fffd4;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: bold;
+    text-shadow: 0 0 8px #00ffd0;
+}
+nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 12px #ffd700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    position: relative;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background: transparent;
+    position: relative;
+    box-shadow: 0 0 18px 2px #00ffd0, 0 0 40px 2px #ffd70033 inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon.shield::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ffd700;
+    border-radius: 50% 50% 60% 60% / 40% 40% 80% 80%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0 0 16px #ffd700;
+}
+.icon.shield::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 36px;
+    border: 2px solid #00ffd0;
+    border-radius: 8px;
+    position: absolute;
+    left: 21px;
+    top: 16px;
+    background: rgba(0,255,208,0.05);
+}
+.icon.laptop::before {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 32px;
+    border: 2px solid #ffd700;
+    border-radius: 6px 6px 12px 12px / 12px 12px 18px 18px;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    box-shadow: 0 0 10px #ffd700;
+}
+.icon.laptop::after {
+    content: '';
+    display: block;
+    width: 38px;
+    height: 6px;
+    background: #ffd700;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    opacity: 0.7;
+}
+.icon.fingerprint::before {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    box-shadow: 0 0 10px #ffd700;
+    opacity: 0.7;
+}
+.icon.fingerprint::after {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px dashed #00ffd0;
+    opacity: 0.6;
+}
+.icon.document::before {
+    content: '';
+    width: 44px;
+    height: 56px;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    position: absolute;
+    left: 13px;
+    top: 7px;
+    background: rgba(255,255,255,0.02);
+}
+.icon.document::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #00ffd0;
+    position: absolute;
+    left: 23px;
+    top: 27px;
+    opacity: 0.6;
+}
+
+.card {
+    background: rgba(10, 20, 40, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 0 24px 4px #00ffd0, 0 0 60px 2px #ffd70044 inset;
+    padding: 45px 40px 35px 40px;
+    max-width: 410px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card h1 {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    color: #8fffd4;
+    text-shadow: 0 0 16px #00ffd0, 0 0 8px #fff;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.card p {
+    color: #c2e7e2;
+    font-size: 1.08rem;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.card button {
+    background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
+    color: #222;
+    padding: 18px 38px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 16px #ffd70088, 0 0 8px #fff2;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.card button:hover {
+    background: linear-gradient(90deg, #ffe066 0%, #ffd700 100%);
+    color: #000;
+    box-shadow: 0 0 24px #ffd700cc;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(120deg, #ffd70022 0 2px, transparent 2px 40px), repeating-linear-gradient(60deg, #00ffd022 0 2px, transparent 2px 40px);
+    animation: bgmove 12s linear infinite;
+}
+
+@keyframes bgmove {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 80px 80px, -80px -80px; }
+}
+
+@media (max-width: 600px) {
+    .container { min-height: 90vh; }
+    .card { padding: 25px 10px; max-width: 98vw; }
+    .icons { gap: 18px; }
+    nav { gap: 18px; font-size: 1rem; }
+}
