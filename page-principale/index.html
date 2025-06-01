@@ -1,30 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agence de Sécurité Informatique</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agence de Sécurité Informatique</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
-    <nav>
-        <a href="#">MENU</a>
-        <a href="#">A PROPOS</a>
-        <a href="#">SERVICES</a>
-        <a href="#">CONTACTS</a>
-    </nav>
-    <main class="container">
-        <div class="icons">
-            <div class="icon shield"></div>
-            <div class="icon laptop"></div>
-            <div class="icon fingerprint"></div>
-            <div class="icon document"></div>
+  <nav>
+    <a href="#">MENU</a>
+    <a href="#">A PROPOS</a>
+    <a href="#">SERVICES</a>
+    <a href="#">CONTACTS</a>
+    <form>
+      <div class="search">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="search" />
+      </div>
+    </form>
+  </nav>
+
+  <div class="logreg-box">
+    <div class="from-box login">
+      <form action="#">
+        <h2>Log In</h2>
+        <div class="input-box">
+          <label>Email</label>
+          <input type="email" required />
         </div>
-        <section class="card">
-            <h1>AGENCE<br>CYBERSECURITE</h1>
-          <p>Votre sécurité , Notre priorité</p>
-            <button>GET STARTED</button>
-        </section>
-    </main>
+        <div class="input-box">
+          <label>Password</label>
+          <input type="password" required />
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" /> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="login-register">
+          <p>Don't have an account? <a href="#" class="registe-link">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="icons">
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon-img" />
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="icon-img" />
+      </a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="icon-img" />
+      </a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" class="icon-img" />
+      </a>
+    </div>
+
+    <section class="card">
+      <h1>AGENCE<br />CYBERSECURITE</h1>
+      <h5>Votre sécurité , Notre priorité</h5>
+      <p>
+        protège vos données et infrastructures<br />
+        contre les cybermenaces avec des solutions<br />
+        avancées et une surveillance proactive.
+      </p>
+      <button>GET STARTED</button>
+    </section>
+
+    <section class="about">
+      <h2>À propos</h2>
+      <p>
+        Bienvenue sur mon site ! Je partage mes projets, idées et centres d’intérêt autour du web, du design et de la cybersécurité.
+      </p>
+      <a href="mailto:contact@travail.collaboratif.1BI3.com" class="email-link">
+        contact@travail.collaboratif.1BI3.com
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mon Site — Suivez-moi :
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
