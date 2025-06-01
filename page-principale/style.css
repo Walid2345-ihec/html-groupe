@@ -1,152 +1,275 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-/*front noir*/
+
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: radial-gradient(ellipse at center, #111 0%, #070a1a 100%);
-    color: #d6ffe9;
-    font-family: 'Montserrat', Arial, sans-serif;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #111 0%, #070a1a 100%);
+  color: #d6ffe9;
+  font-family: 'Montserrat', Arial, sans-serif;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(120deg, #ffd70022 0 2px, transparent 2px 40px),
+              repeating-linear-gradient(60deg, #00ffd022 0 2px, transparent 2px 40px);
+  animation: bgmove 12s linear infinite;
+}
+@keyframes bgmove {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 80px 80px, -80px -80px; }
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    padding: 40px 0 0 0;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}
-
-nav a {
-    color: #8fffd4;
-    text-decoration: none;
-    transition: color 0.2s;
-    font-weight: bold;
-    text-shadow: 0 0 8px #00ffd0;
-}
-nav a:hover {
-    color: #ffd700;
-    text-shadow: 0 0 12px #ffd700;
-}
-nav div{
-  color: #121211;
-}
-.search{
-  --padding: 14px;
-  width: max-content;
   display: flex;
   align-items: center;
-  padding var(--padding);
-  border-radius: 28px;
-  background: #f6f6f6;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 0 0 0;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
 }
-.search-input{
-  font-size: 16px;
-  font-family: 'Lexend', sans-serif;
-  color: #333333;
-  margin-left: var(--padding);
-  outline: none;
-  border: none;
+nav a {
+  color: #8fffd4;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffd0;
+  margin: 0 6px;
+}
+nav a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 12px #ffd700;
+}
+nav form {
+  margin-left: 30px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 2px 10px;
+  box-shadow: 0 0 8px #00ffd044;
+}
+.search-icon {
+  color: #ffd700;
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+.search-input {
   background: transparent;
-  
+  border: none;
+  outline: none;
+  color: #8fffd4;
+  font-size: 1em;
+  padding: 6px 4px;
+  width: 120px;
 }
-/*position du box*/
+.search-input::placeholder {
+  color: #8fffd477;
+}
+
+/* REMOVE ALL STYLES FROM LOGIN FORM */
+.logreg-box,
+.from-box.login,
+.from-box.login * {
+  all: unset;
+  box-sizing: border-box;
+}
+
+/* Restore basic browser layout for form fields */
+.logreg-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 30px;
+  margin-right: 40px;
+  z-index: 2;
+  position: relative;
+}
+.from-box.login form {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.from-box.login h2,
+.from-box.login label,
+.from-box.login input,
+.from-box.login button,
+.from-box.login a,
+.from-box.login p {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 0;
+  text-align: left;
+  display: block;
+}
+.from-box.login input[type="email"],
+.from-box.login input[type="password"] {
+  width: 160px;
+  margin-bottom: 6px;
+  border: 1px solid #888;
+  padding: 2px 4px;
+  background: #fff;
+  color: #000;
+  font-size: 1em;
+  border-radius: 0;
+}
+.from-box.login input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 4px;
+}
+.from-box.login button {
+  width: auto;
+  padding: 2px 8px;
+  margin-top: 4px;
+  background: #eee;
+  color: #222;
+  border: 1px solid #888;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1em;
+}
+.from-box.login button:hover {
+  background: #ddd;
+}
+.from-box.login a {
+  color: #00f;
+  display: inline;
+  text-decoration: underline;
+  font-size: 1em;
+}
+.from-box.login a:hover {
+  color: #f00;
+}
+.from-box.login .login-register {
+  margin-top: 8px;
+  text-align: left;
+}
+.from-box.login h2 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #fff;
+  display: block;
+}
+.from-box.login label {
+  margin-bottom: 2px;
+  color: #fff;
+  font-size: 1em;
+  display: block;
+}
+.from-box.login .remember-forgot {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1em;
+  color: #fff;
+}
+
+/* --- THE REST OF YOUR CYBER PAGE STYLES --- */
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    min-height: 80vh;
-    position: relative;
-}
-/*box de section*/
-.icon.document::after {
-    content: '';
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 2px solid #00ffd0;
-    position: absolute;
-    left: 23px;
-    top: 27px;
-    opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  position: relative;
+  z-index: 1;
 }
 
-
-
-.form-box{
-  font-size: 32px;
+.card {
+  background: rgba(10, 20, 40, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 0 24px 4px #00ffd0, 0 0 60px 2px #ffd70044 inset;
+  padding: 45px 40px 35px 40px;
+  max-width: 410px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 60px;
 }
-/*titre agence cyber...*/
 .card h1 {
-    font-size: 2.3rem;
-    letter-spacing: 2px;
-    color: #8fffd4;
-    text-shadow: 0 0 16px #00ffd0, 0 0 8px #fff;
-    margin-bottom: 16px;
-    margin-top: 0;
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  color: #8fffd4;
+  text-shadow: 0 0 16px #00ffd0, 0 0 8px #fff;
+  margin-bottom: 12px;
+  margin-top: 0;
 }
-.card h5{
-  font-size: 1.4rem;
-    letter-spacing: 2px;
-    color:  #ffd700;
-    text-shadow: 0 0 16px  #ffd700, 0 0 3px #fff;
-    margin-bottom: 16px;
-    margin-top: 0;
-  
+.card h5 {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  margin-top: 0;
+  font-weight: normal;
+  text-shadow: 0 0 10px #ffd70055;
 }
 .card p {
-    color: #c2e7e2;
-    font-size: 1.08rem;
-    margin-bottom: 32px;
-    line-height: 1.5;
+  color: #c2e7e2;
+  font-size: 1.08rem;
+  margin-bottom: 32px;
+  line-height: 1.5;
 }
-
 .card button {
-    background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
-    color: #222;
-    padding: 18px 38px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.15rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 0 16px #ffd70088, 0 0 8px #fff2;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
+  color: #222;
+  padding: 18px 38px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 16px #ffd70088, 0 0 8px #fff2;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .card button:hover {
-    background: linear-gradient(90deg, #ffe066 0%, #ffd700 100%);
-    color: #000;
-    box-shadow: 0 0 24px #ffd700cc;
+  background: linear-gradient(90deg, #ffe066 0%, #ffd700 100%);
+  color: #000;
+  box-shadow: 0 0 24px #ffd700cc;
 }
 
-/*arriere plan */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: repeating-linear-gradient(120deg, #ffd70022 0 3px, transparent 2px 40px), repeating-linear-gradient(60deg, #00ffd022 0 2px, transparent 2px 40px);
-    animation: bgmove 20s linear infinite;
+@media (max-width: 900px) {
+  .logreg-box {
+    justify-content: center;
+    margin-right: 0;
+  }
+  .container {
+    min-height: 70vh;
+  }
 }
-/*mouvement d'arriere plan */
-@keyframes bgmove {
-    0% { background-position: 0 0, 0 0; }
-    100% { background-position: 80px 80px, -80px -80px; }
-}
-
 @media (max-width: 600px) {
-    .container { min-height: 90vh; }
-    .card { padding: 25px 10px; max-width: 98vw; }
-    .icons { gap: 18px; }
-    nav { gap: 18px; font-size: 1rem; }
-  
-  
-  
-  
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 1rem;
+  }
+  .container {
+    min-height: 90vh;
+  }
+  .card {
+    padding: 25px 10px;
+    max-width: 98vw;
+  }
+  .logreg-box {
+    margin-top: 15px;
+  }
 }
