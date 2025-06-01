@@ -103,5 +103,65 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence de Sécurité Informatique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#">MENU</a>
+        <a href="#">A PROPOS</a>
+        <a href="#">SERVICES</a>
+        <a href="#">CONTACTS</a>
+    </nav>
+    <main class="container">
+        <div class="icons">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon-img" />
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="icon-img" />
+  </a>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="icon-img" />
+  </a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="icon-link">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" class="icon-img" />
+  </a>
+        </div>
+        <section class="card">
+            <h1>AGENCE<br>CYBERSECURITE</h1>
+          <p>Votre sécurité , Notre priorité</p>
+            <button>GET STARTED</button>
+        </section>
+        <section class="about">
+  <h2>À propos</h2>   
+  <p>Bienvenue sur mon site ! Je partage mes projets, idées et centres d’intérêt autour du web, du design et de la cybersécurité.</p>
+   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@travail.collaboratif.1BI3.com" target="_blank" class="email-link">
+  contact@travail.collaboratif.1BI3.com
+</a>
+</section>
+
+  <footer>
+  <p>© 2025 Mon Site — Suivez-moi :
+    <a href="#">Instagram</a> |
+    <a href="#">LinkedIn</a> |
+    <a href="#">GitHub</a>
+  </p>
+  </footer>
+
+ <button id="backToTop">↑</button>
+
+ <script>
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+ </script>
+    </main>
 </body>
 </html>
