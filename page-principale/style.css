@@ -58,6 +58,13 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Animation + survol */
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transition: transform 0.3s ease;
+}
+.icon:hover {
+    transform: scale(1.2);
 }
 
 .icon.shield::before {
@@ -215,10 +222,121 @@ body::before {
     0% { background-position: 0 0, 0 0; }
     100% { background-position: 80px 80px, -80px -80px; }
 }
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ➕ Section About/Contact */
+.about {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    text-align: center;
+    color: #d6ffe9;
+    box-shadow: 0 0 12px #00ffd033;
+}
+.about h2 {
+    color: #ffd700;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+.about a {
+    color: #8fffd4;
+    text-decoration: none;
+}
+.about a:hover {
+    text-decoration: underline;
+    color: #ffd700;
+}
+
+/* ➕ Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #070a1a;
+    color: #8fffd4;
+    font-size: 0.95rem;
+    border-top: 1px solid #00ffd055;
+}
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 8px;
+}
+footer a:hover {
+    color: #00ffd0;
+    text-shadow: 0 0 6px #00ffd0;
+}
+
+/* ➕ Bouton retour haut */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00ffd0;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 0 12px #00ffd0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+    display: none;
+}
+#backToTop:hover {
+    transform: scale(1.2);
+    background: #ffd700;
+}
 
 @media (max-width: 600px) {
     .container { min-height: 90vh; }
     .card { padding: 25px 10px; max-width: 98vw; }
     .icons { gap: 18px; }
     nav { gap: 18px; font-size: 1rem; }
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.icon-link {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 18px 2px #00ffd0, 0 0 40px 2px #ffd70033 inset;
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 30px 4px #ffd700, 0 0 60px 4px #00ffd0 inset;
+}
+
+.icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+.email-link {
+  color: #8fffd4;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.email-link:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700;
 }
